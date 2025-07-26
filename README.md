@@ -1,69 +1,68 @@
-# React + TypeScript + Vite
+# Icertis Dynamic Form Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a dynamic form builder application built with React, TypeScript,SCSS and Vite. It allows you to render forms from a JSON schema, validate user input, and display submitted data in real time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Form Rendering:** Renders forms based on a schema fetched from an API or defined locally.
+- **Field Types Supported:** Text, Number, Checkbox, Select, Date.
+- **Validation:** Supports required fields and custom validation rules.
+- **Conditional Fields:** Show/hide fields based on other field values.
+- **Live Submission Preview:** Displays submitted data in a summary card.
+- **Modern UI:** Responsive and clean design using SCSS.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or above recommended)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/KeshavDussal/icertis-dynamic-form.git
+cd icertis-dynamic-form
+npm install
+# or
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Running the App
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
+# or
+yarn dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
+
+## Project Structure
+
+- `src/`
+  - `components/`
+    - `FormRenderer.tsx` – Main form rendering logic
+    - `Field.tsx` – Individual field rendering
+  - `utils/` – Utility functions (validation, formatting)
+  - `types.ts` – TypeScript type definitions
+  - `App.tsx` – Main application component
+  - `App.scss` – Styles
+
+## Customizing the Form
+
+The form schema is fetched from an API endpoint. You can update the schema or point to a different endpoint in `App.tsx`.
+
+## License
+
+MIT
+
+## Demo
+
+Here’s a quick preview of the form rendering:
+
+![Form GIF Output](./src/assets/IcertisDynamicFormOutput.gif)
