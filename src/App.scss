@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* ========== Base Styles ========== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+/* ========== Loader ========== */
+.full-page-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========== App Wrapper ========== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.column {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.left-column {
+  background-color: #ffffff;
+}
+
+.right-column {
+  background-color: #f1f3f5;
+}
+
+/* ========== Heading ========== */
+.heading {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #00e4bc;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+/* ========== Form Styles ========== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+  }
+}
+.field.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+
+  input[type="checkbox"] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+  }
+
+  label {
+    margin: 0;
+    font-weight: 500;
+  }
+}
+/* ========== Button ========== */
+button {
+  background-color: #010899;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+/* ========== Error Message ========== */
+.error {
+  color: #e63946;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ========== Form Submission Summary  and heading color ========== */
+
+.form-submission-summary-text,
+h2 {
+  color: #0056b3;
+}
+
+/* ========== Submitted Data Card ========== */
+.submitted-data-card {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  margin-top: 1rem;
+}
+
+.submitted-data-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.data-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e2e2;
+}
+
+.label {
+  font-weight: 600;
+  color: #222;
+}
+
+.value {
+  color: #555;
+  font-style: italic;
+}
+
+/* ========== No Data Message ========== */
+.no-data {
+  color: #666;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .column {
+    flex: 100%;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
